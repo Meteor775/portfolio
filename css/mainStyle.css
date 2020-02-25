@@ -1,0 +1,148 @@
+body {
+	overflow: hidden;
+	background: Snow;
+}
+
+#gridContainer {
+	line-height: 0;
+	position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+	bottom: 0;
+}
+
+.rooms {
+	border: solid;
+}
+
+.pcWelcomeGrid {
+	border-radius: 15px;
+}
+
+.mbWelcomeGrid {
+	border-radius: 35px;
+}
+
+.whiteTitle {
+	position: absolute;
+	background-color: Snow;
+	height: 30px;
+	width: 140px;
+	top: 25px;
+	left: 290px;
+}
+
+.whiteName {
+	position: absolute;
+	background-color: Snow;
+	height: 37px;
+	width: 150px;
+	top: 10px;
+	right: 0px;
+}
+
+.whiteMb {
+	position: absolute;
+	background-color: Snow;
+	height: 62px;
+	width: 320px;
+	top: 60px;
+	left: 355px;
+}
+
+.pcContinueTrigger {
+	position: absolute;
+	height: 36px;
+	width: 180px;
+	top: 504px;
+	left: 648px;
+	opacity: 0;
+	animation-name: ContinueTriggerAnimation;
+	animation-duration: 2s;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+}
+
+.pcContinueTrigger:hover > .continue {
+	background-color: DarkSeaGreen;
+}
+
+.mbContinueTrigger {
+	position: absolute;
+	height: 83px;
+	width: 336px;
+	top: 1190px;
+	left: 427px;
+	opacity: 0;
+	animation-name: ContinueTriggerAnimation;
+	animation-duration: 2s;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+}
+
+.continueClicked {
+	animation-name: continueAnimation;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+}
+
+.contentGrid {
+	animation-name: contentGridDown;
+	animation-duration: 0.8s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+
+.off {
+	background-color: Snow;
+}
+
+.idle {
+	background-color: SkyBlue;
+}
+
+.light {
+	background-color: PaleVioletRed;
+}
+
+.top {
+	background-color: DarkSeaGreen;
+}
+
+.continue {
+	background-color: SkyBlue;
+	transition: 0.5s;
+}
+
+.blink {
+	opacity: 1;
+	animation-name: blinkAnimation;
+	animation-duration: 1s;
+	animation-delay: 5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes ContinueTriggerAnimation {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@keyframes blinkAnimation {
+	0% {opacity: 1;}
+	79% {opacity: 1;}
+	80% {opacity: 0;}
+	100% {opacity: 0;}
+}
+
+@keyframes continueAnimation {
+	from {top: 0vh;}
+	to {top: -200vh;}
+}
+
+@keyframes contentGridDown {
+	from {top: -30vh;}
+	to {top: 10px;}
+}

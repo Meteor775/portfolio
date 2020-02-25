@@ -1,0 +1,192 @@
+@font-face {
+	font-family: 'noto serif';
+	src: url('fonts/NotoSerif-Regular.ttf')format('truetype');
+}
+
+@font-face {
+	font-family: 'noto san-serif';
+	src: url('fonts/NotoSans-Regular.ttf')format('truetype');
+}
+
+@font-face {
+	font-family: 'noto light san-serif';
+	src: url('fonts/NotoSans-ExtraLight.ttf')format('truetype');
+}
+
+#nonIErecommended {
+	font-family: 'noto san-serif';
+	font-size: 10pt;
+	color: silver;
+	text-align: center;
+	position: absolute;
+	margin: auto;
+	bottom: 10pt;
+	left: 0;
+	right: 0;
+}
+
+.pcWelcomeTitle {
+	position: absolute;
+	left: 298px;
+	font-family: 'noto san-serif';
+	font-weight: bold;
+	font-size: 14pt;
+	letter-spacing: 2pt;
+	color: DarkSeaGreen;
+	animation-name: pcWelcomeTitleIn;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes pcWelcomeTitleIn {
+	from {top: 45px;}
+	to {top: 17px;}
+}
+
+.pcWelcomeName {
+	position: absolute;
+	top: 40px;
+	right: 10px;
+	font-family: 'noto san-serif';
+	font-weight: bold;
+	font-size: 8pt;
+	letter-spacing: 1pt;
+	color: SkyBlue;
+	animation-name: pcWelcomeNameIn;
+	animation-duration: 1s;
+	animation-delay: 1s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes pcWelcomeNameIn {
+	from {top: 40px;}
+	to {top: 60px;}
+}
+
+.mbWelcomeTitle {
+	position: absolute;
+	left: 366px;
+	font-family: 'noto san-serif';
+	font-size: 27pt;
+	font-weight: bold;
+	letter-spacing: 2pt;
+	color: DarkSeaGreen;
+	animation-name: mbWelcomeTitleIn;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes mbWelcomeTitleIn {
+	from {top: 90px;}
+	to {top: 43px;}
+}
+
+.mbWelcomeName {
+	position: absolute;
+	left: 367px;
+	font-family: 'noto san-serif';
+	font-size: 16pt;
+	font-weight: bold;
+	letter-spacing: 1pt;
+	color: SkyBlue;
+	animation-name: mbWelcomeNameIn;
+	animation-duration: 1s;
+	animation-delay: 5;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes mbWelcomeNameIn {
+	from {top: 100px;}
+	to {top: 122px;}
+}
+
+.pcNext {
+	color: SkyBlue;
+	position: absolute;
+	top: 18px;
+	left: 45px;
+	font-family: 'noto san-serif';
+	font-weight: bold;
+	font-size: 12pt;
+	letter-spacing: 3pt;
+	transition: 0.5s;
+}
+
+#pcNextTrigger:hover > .pcNext {
+	color: DarkSeaGreen;
+}
+
+.mbNext {
+	color: SkyBlue;
+	position: absolute;
+	top: 43px;
+	left: 116px;
+	font-family: 'noto san-serif';
+	font-weight: bold;
+	font-size: 27pt;
+	letter-spacing: 4pt;
+	transition: 0.5s;
+}
+
+.pcButtonText {
+	position: absolute;
+	top: 18px;
+	font-family: 'noto san-serif';
+	font-weight: bold;
+	font-size: 12pt;
+	letter-spacing: 2pt;
+	color: SkyBlue;
+	transition: 0.5s;
+}
+
+.pcButtonTrigger:hover > .pcButtonText {
+	color: DarkSeaGreen;
+}
+
+.pcButtonTextHome {
+	left: 42px;
+}
+
+.pcButtonTextProfile {
+	left: 50px;
+}
+
+.pcButtonTextPortfolio {
+	left: 53px;
+}
+
+.pcButtonTextTitle {
+	left: 46px;
+}
+
+.mbButtonText {
+	position: absolute;
+	left: 85px;
+	top: 42px;
+	font-family: 'noto san-serif';
+	font-weight: bold;
+	font-size: 27pt;
+	letter-spacing: 2pt;
+	color: SkyBlue;
+	transition: 0.5s;
+}
+
+.mbButtonTextHome {
+	left: 113px;
+}
+
+.mbButtonTextProfile {
+	left: 135px;
+}
+
+.mbButtonTextPortfolio {
+	left: 105px;
+}
+
+.mbButtonTextTitle {
+	left: 118px;
+}

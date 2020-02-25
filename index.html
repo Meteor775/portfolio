@@ -1,0 +1,23 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Edward Tu</title>
+		<link rel="icon" href="icon.png">
+		<link rel="stylesheet" type="text/css" href="css/gridStyle.css">
+		<link rel="stylesheet" type="text/css" href="css/text.css">
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/method.js"></script>
+		<script src="js/main.js"></script>
+	</head>
+	<body>
+		<div id="nonIErecommended"></div>
+		<div id="gridContainer">Javascript Disabled. Please enable Javascript and refresh this page.</div>
+	</body>
+	<script>
+		if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+			$("#nonIErecommended").text("Internet Explorer and Microsoft Edge are not recommended on this website");
+		}
+		main.welcome();
+	</script>
+</html>
