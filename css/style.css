@@ -1,0 +1,302 @@
+/* Main styles. */
+* {
+	outline: none;
+	margin: 0;
+}
+
+body {
+	overflow: hidden;
+	background: Snow;
+}
+
+#gridContainer {
+	line-height: 0;
+	position: absolute;
+  margin: auto;
+  right: 0;
+  left: 0;
+	font-family: 'noto san-serif';
+	text-align: center;
+}
+
+/* Rooms styles. */
+.pcRooms {
+	width: 16px;
+	height: 16px;
+	border: solid;
+	border-radius: 15px;
+	border-width: 10px;
+	border-color: Snow;
+}
+
+.mbRooms {
+	width: 15px;
+	height: 15px;
+	border: solid;
+	border-radius: 14px;
+	border-width: 10px;
+	border-color: Snow;
+}
+
+.off {
+	background-color: Snow;
+}
+
+.idle {
+	background-color: SkyBlue;
+}
+
+.light {
+	background-color: PaleVioletRed;
+}
+
+.top {
+	background-color: DarkSeaGreen;
+}
+
+.button {
+	background-color: SkyBlue;
+	transition: 0.5s;
+}
+
+.blink {
+	opacity: 1;
+	animation-name: blinkAnimation;
+	animation-duration: 1s;
+	animation-delay: 5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes blinkAnimation {
+	0% {opacity: 1;}
+	79% {opacity: 1;}
+	80% {opacity: 0;}
+	100% {opacity: 0;}
+}
+
+/* Welcome grid styles. */
+.welcomeGrid {
+	bottom: 50%;
+}
+
+.welcomeGridIn {
+	animation-name: welcomeGridInAnimation;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+
+@keyframes welcomeGridInAnimation {
+	from {top: -100%;}
+	to {top: 50%;}
+}
+
+.welcomeGridOut {
+	animation-name: welcomeGridOutAnimation;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+}
+
+@keyframes welcomeGridOutAnimation {
+	from {top: 50%;}
+	to {top: -100%;}
+}
+
+/* Styles of mask in welcome grid. */
+.pcMask {
+	position: absolute;
+	background-color: Snow;
+	height: 30px;
+	width: 1400px;
+	top: 25px;
+	left: 290px;
+}
+
+.mbMask {
+	position: absolute;
+	background-color: Snow;
+	height: 25px;
+	width: 140px;
+	top: 25px;
+	left: 145px;
+}
+
+/* Styles of next button in welcome grid. */
+#pcNextTrigger {
+	position: absolute;
+	height: 36px;
+	width: 180px;
+	top: 504px;
+	left: 720px;
+	opacity: 0;
+	animation-name: NextTriggerAnimation;
+	animation-duration: 1s;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+}
+
+#pcNextTrigger:hover > .button {
+	background-color: DarkSeaGreen;
+}
+
+#mbNextTrigger {
+	position: absolute;
+	height: 83px;
+	width: 336px;
+	top: 455px;
+	left: 175px;
+	opacity: 0;
+	animation-name: NextTriggerAnimation;
+	animation-duration: 1s;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes NextTriggerAnimation {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+/* Menu grid styles. */
+.menuGrid {
+	bottom : auto;
+}
+
+.menuGridIn {
+	animation-name: menuGridInAnimation;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+
+@keyframes menuGridInAnimation {
+	from {top: -100%;}
+	to {top: 10px;}
+}
+
+.menuGridOut {
+	animation-name: menuGridOutAnimation;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+}
+
+@keyframes menuGridOutAnimation {
+	from {top: 10px;}
+	to {top: -100%;}
+}
+
+/* Menu button styles. */
+.ButtonTrigger {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+.Button:hover .button{
+	background-color: DarkSeaGreen;
+}
+
+.Button:hover .pcButtonText{
+	color: DarkSeaGreen;
+}
+
+.Button:hover .mbButtonText{
+	color: DarkSeaGreen;
+}
+
+#pcButtonHome {
+	position: absolute;
+	top: 108px;
+	left: 0px;
+}
+
+#pcButtonProfile {
+	position: absolute;
+	top: 108px;
+	left: 216px;
+}
+
+#pcButtonPortfolio {
+	position: absolute;
+	top: 108px;
+	left: 468px;
+}
+
+#pcButtonTitle {
+	position: absolute;
+	top: 108px;
+	left: 756px;
+}
+
+.mbButtonTrigger {
+	height: 35px;
+}
+
+#mbButtonHome {
+	position: absolute;
+	top: 35px;
+	left: 210px;
+}
+
+#mbButtonProfile {
+	position: absolute;
+	top: 35px;
+	left: 0px;
+}
+
+#mbButtonPortfolio {
+	position: absolute;
+	top: 70px;
+	left: 0px;
+}
+
+#mbButtonTitle {
+	position: absolute;
+	top: 70px;
+	left: 210px;
+}
+
+/* Style about photo slide show. */
+#photoContainer {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: black;
+	animation-name: photoContainerAnimation;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes photoContainerAnimation {
+	from {opacity: 0;}
+	to {opacity: 40%;}
+}
+
+#closePhotoBtn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 20px;
+}
+
+#nextPhotoBtn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-100%);
+	right: 0;
+	margin: 20px;
+}
+
+#previousPhotoBtn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-100%) rotate(180deg);
+	left: 0;
+	margin: 20px;
+}

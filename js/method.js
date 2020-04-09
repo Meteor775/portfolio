@@ -25,20 +25,20 @@ function createGrid(gridInfo, callback) {
     callback(gridInfo); // Callback.
 }
 
-/* Grow the seed from root automatically. */
-function growSeed(gridInfo, growInfo, rootInfo, callback) {
-  if(rootInfo.steps < rootInfo.stepsToEnd) {
-    changeRoom(gridInfo, rootInfo.rootId - (rootInfo.steps * gridInfo.column), gridInfo.roomsClass.light);  // Change the next room.
-    rootInfo.steps++;
-    setTimeout(growSeed, growInfo.intervalTime, gridInfo, growInfo, rootInfo, callback);
-  } else if(rootInfo.steps == rootInfo.stepsToEnd) {
-    changeRoom(gridInfo, rootInfo.rootId - (rootInfo.steps * gridInfo.column), gridInfo.roomsClass.top);  // Change the final room.
-    callback(); // Callback.
-  }
-}
-
 /* Seed playing. */
 function playSeed(gridInfo, growInfo, callback) {
+  /* Grow the seed from root automatically. */
+  var growSeed = function(gridInfo, growInfo, rootInfo, callback) {
+    if(rootInfo.steps < rootInfo.stepsToEnd) {
+      changeRoom(gridInfo, rootInfo.rootId - (rootInfo.steps * gridInfo.column), gridInfo.roomsClass.light);  // Change the next room.
+      rootInfo.steps++;
+      setTimeout(growSeed, growInfo.intervalTime, gridInfo, growInfo, rootInfo, callback);
+    } else if(rootInfo.steps == rootInfo.stepsToEnd) {
+      changeRoom(gridInfo, rootInfo.rootId - (rootInfo.steps * gridInfo.column), gridInfo.roomsClass.top);  // Change the final room.
+      callback(); // Callback.
+    }
+  }
+
   // Setup.
   var _gridInfo = JSON.parse(JSON.stringify(gridInfo)); // Clone gridInfo, avoiding changing original.
   growInfo.order = 0; // Order in growlist.
@@ -92,12 +92,45 @@ function appendLines(gridInfo, callback) {
 }
 
 /* Click event. */
-function clickEvent(buttonInfo, affectInfo, callback) {
+function gridClickEvent(buttonInfo, affectInfo, callback) {
   $(buttonInfo.container).click(function() {
+    var played = false
     $('.' + affectInfo.enterClass).addClass(affectInfo.exitClass).on('animationend', function() {
-      if(callback)
-        callback(); // Callback.
-      return;
+      $('.' + affectInfo.enterClass).off();
+      callback(); // Callback.
     });
   });
+}
+
+/* Photo slide manually. */
+function photoViewer(album) {
+  var clearDiv =
+  $('body').append('<div id="photoContainer"></div>');
+  $('#photoContainer').append('<input type="image" id="closePhotoBtn" src=' + album.ui.closeImage + '>');
+  $('#closePhotoBtn').click(function() { $('#photoContainer').remove(); });
+  $('#photoContainer').append('<input type="image"  id="nextPhotoBtn" src=' + album.ui.nextImage + '>');
+  $('#photoContainer').append('<input type="image"  id="previousPhotoBtn" src=' + album.ui.nextImage + '>');
+
+  var photosList = [];
+  var currentPhoto = 1;
+  /*
+  while($.get(location.href.replace("index.html", "") + album.imagesLocation + currentPhoto + ".jpg").done(function(){return true;})) {
+    photosList.push(album.imagesLocation + currentPhoto + ".jpg");
+    currentPhoto++;
+  }
+  */
+
+  $.ajax({
+      //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+      url: album.imagesLocation,
+      success: function (data) {
+          //List all .png file names in the page
+          $(data).find("a:contains(.jpg)").each(function () {
+              var filename = this.href.replace(window.location.host, "").replace("http://", "");
+              $("body").append("<img src='" + dir + filename + "'>");
+          });
+      }
+  });
+
+  console.log($.get(location.href.replace("index.html", "") + album.imagesLocation + currentPhoto + ".jpg"));
 }

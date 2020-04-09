@@ -61,15 +61,15 @@
 }
 
 @keyframes pcWelcomeNameIn {
-	from {top: 40px;}
-	to {top: 60px;}
+	from {top: 23px;}
+	to {top: 19px;}
 }
 
 .mbWelcomeTitle {
 	position: absolute;
-	left: 366px;
+	left: 150px;
 	font-family: 'noto san-serif';
-	font-size: 27pt;
+	font-size: 12pt;
 	font-weight: bold;
 	letter-spacing: 2pt;
 	color: DarkSeaGreen;
@@ -80,15 +80,15 @@
 }
 
 @keyframes mbWelcomeTitleIn {
-	from {top: 90px;}
-	to {top: 43px;}
+	from {top: 32px;}
+	to {top: 17px;}
 }
 
 .mbWelcomeName {
 	position: absolute;
-	left: 367px;
+	left: 151px;
 	font-family: 'noto san-serif';
-	font-size: 16pt;
+	font-size: 8pt;
 	font-weight: bold;
 	letter-spacing: 1pt;
 	color: SkyBlue;
@@ -100,36 +100,8 @@
 }
 
 @keyframes mbWelcomeNameIn {
-	from {top: 100px;}
-	to {top: 122px;}
-}
-
-.pcNext {
-	color: SkyBlue;
-	position: absolute;
-	top: 18px;
-	left: 45px;
-	font-family: 'noto san-serif';
-	font-weight: bold;
-	font-size: 12pt;
-	letter-spacing: 3pt;
-	transition: 0.5s;
-}
-
-#pcNextTrigger:hover > .pcNext {
-	color: DarkSeaGreen;
-}
-
-.mbNext {
-	color: SkyBlue;
-	position: absolute;
-	top: 43px;
-	left: 116px;
-	font-family: 'noto san-serif';
-	font-weight: bold;
-	font-size: 27pt;
-	letter-spacing: 4pt;
-	transition: 0.5s;
+	from {top: 45px;}
+	to {top: 55px;}
 }
 
 .pcButtonText {
@@ -143,50 +115,73 @@
 	transition: 0.5s;
 }
 
+.mbButtonText {
+	position: absolute;
+	top: 17px;
+	font-family: 'noto san-serif';
+	font-weight: bold;
+	font-size: 10pt;
+	letter-spacing: 2.5pt;
+	color: SkyBlue;
+	transition: 0.5s;
+}
+
+.pcButtonTextNext {
+	color: SkyBlue;
+	position: absolute;
+	top: 18px;
+	left: 45px;
+	font-family: 'noto san-serif';
+	font-weight: bold;
+	font-size: 12pt;
+	letter-spacing: 3pt;
+	transition: 0.5s;
+}
+
+.mbButtonTextNext {
+	color: SkyBlue;
+	position: absolute;
+	top: 17px;
+	left: 44px;
+	font-family: 'noto san-serif';
+	font-weight: bold;
+	font-size: 12pt;
+	letter-spacing: 3pt;
+	transition: 0.5s;
+}
+
 .pcButtonTrigger:hover > .pcButtonText {
 	color: DarkSeaGreen;
 }
 
 .pcButtonTextHome {
-	left: 42px;
+	left: 45px;
 }
 
 .pcButtonTextProfile {
-	left: 50px;
+	left: 51px;
 }
 
 .pcButtonTextPortfolio {
-	left: 53px;
+	left: 55px;
 }
 
 .pcButtonTextTitle {
-	left: 46px;
-}
-
-.mbButtonText {
-	position: absolute;
-	left: 85px;
-	top: 42px;
-	font-family: 'noto san-serif';
-	font-weight: bold;
-	font-size: 27pt;
-	letter-spacing: 2pt;
-	color: SkyBlue;
-	transition: 0.5s;
+	left: 48px;
 }
 
 .mbButtonTextHome {
-	left: 113px;
+	left: 46px;
 }
 
 .mbButtonTextProfile {
-	left: 135px;
+	left: 53px;
 }
 
 .mbButtonTextPortfolio {
-	left: 105px;
+	left: 38px;
 }
 
 .mbButtonTextTitle {
-	left: 118px;
+	left: 47px;
 }
