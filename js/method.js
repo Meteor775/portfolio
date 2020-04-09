@@ -128,8 +128,8 @@ function photoViewer(album) {
           //List all .png file names in the page
           $(data).find("a:contains(.jpg)").each(function () {
               var filename = this.href.replace(window.location.host, "").replace("http://", "");
-              console.log(album.imagesLocation + filename);
-              $("body").append("<img src='" + album.imagesLocation + filename + "'>");
+              console.log(dir + filename);
+              $("body").append("<img src='" + dir + filename + "'>");
           });
       }
   });
