@@ -120,6 +120,7 @@ function photoViewer(album) {
   }
   */
 
+
   $.ajax({
       //This will retrieve the contents of the folder if the folder is configured as 'browsable'
       url: album.imagesLocation,
@@ -127,10 +128,9 @@ function photoViewer(album) {
           //List all .png file names in the page
           $(data).find("a:contains(.jpg)").each(function () {
               var filename = this.href.replace(window.location.host, "").replace("http://", "");
+              console.log(dir + filename);
               $("body").append("<img src='" + dir + filename + "'>");
           });
       }
   });
-
-  console.log($.get(location.href.replace("index.html", "") + album.imagesLocation + currentPhoto + ".jpg"));
 }
