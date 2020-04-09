@@ -119,8 +119,6 @@ function photoViewer(album) {
     currentPhoto++;
   }
   */
-
-
   $.ajax({
       //This will retrieve the contents of the folder if the folder is configured as 'browsable'
       url: album.imagesLocation,
@@ -133,4 +131,6 @@ function photoViewer(album) {
           });
       }
   });
+
+  console.log($.get(location.href.replace("index.html", "") + album.imagesLocation + currentPhoto + ".jpg"));
 }
