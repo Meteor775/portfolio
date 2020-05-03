@@ -127,7 +127,7 @@ function photoViewer(album) {
           $(data).find("a:contains(.jpg)").each(function () {
               var filename = this.href.replace(window.location.host, "").replace("http://", "");
               console.log(album.imagesLocation + filename);
-              $("body").append("<img src='" + album.imagesLocation + "1.jpg'>");
+              $("body").append("<img src='" + album.imagesLocation + "1.jpg'>").addClass('photoFrame');
           });
       }
   });
