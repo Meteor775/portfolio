@@ -120,7 +120,7 @@ function photoViewer(album) {
   }
   */
 
-  var folderName = window.location.host + album.imagesLocation;
+  var folderName = album.imagesLocation;
   $('#photoContainer').append("<img src='" + folderName + "1.jpg'>").addClass('photoFrame');
   console.log(folderName);
 }
