@@ -132,5 +132,5 @@ function photoViewer(album) {
       }
   });
 
-  console.log(album.imagesLocation + "1.jpg");
+  console.log(window.location.host + ', ' + );
 }
