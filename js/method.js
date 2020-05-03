@@ -120,7 +120,22 @@ function photoViewer(album) {
   }
   */
 
-  var folderName = album.imagesLocation;
-  $('#photoContainer').append("<img src='" + folderName + "1.jpg'>").addClass('photoFrame');
-  console.log(folderName);
+  /*
+  $.ajax({
+      //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+      url: album.imagesLocation,
+      success: function (data) {
+          //List all .png file names in the page
+          $(data).find("a:contains(.jpg)").each(function () {
+              var folderName = window.location.host + album.imagesLocation;
+              console.log(album.imagesLocation + filename);
+              $("body").append("<img src='" + folderName + "1.jpg'>").addClass('photoFrame');
+          });
+      }
+  });
+  */
+
+  $('#photoContainer').append("<img class='photoFrame' src='" + album.imagesLocation + "1.jpg'>");
+
+  console.log(window.location.host);
 }
