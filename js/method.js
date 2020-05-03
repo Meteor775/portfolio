@@ -122,5 +122,5 @@ function photoViewer(album) {
 
   var folderName = window.location.host + album.imagesLocation;
   $('#photoContainer').append("<img src='" + folderName + "1.jpg'>").addClass('photoFrame');
-  console.log(window.location.host);
+  console.log(folderName);
 }
