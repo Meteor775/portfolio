@@ -106,6 +106,7 @@ function gridClickEvent(buttonInfo, affectInfo, callback) {
 function photoViewer(album) {
   var clearDiv =
   $('body').append('<div id="photoContainer"></div>');
+  $('#photoContainer').append('<div id="photoContainerBackground">');
   $('#photoContainer').append('<input type="image" id="closePhotoBtn" src=' + album.ui.closeImage + '>');
   $('#closePhotoBtn').click(function() { $('#photoContainer').remove(); });
   $('#photoContainer').append('<input type="image"  id="nextPhotoBtn" src=' + album.ui.nextImage + '>');
