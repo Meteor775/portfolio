@@ -119,18 +119,8 @@ function photoViewer(album) {
     currentPhoto++;
   }
   */
-  $.ajax({
-      //This will retrieve the contents of the folder if the folder is configured as 'browsable'
-      url: album.imagesLocation,
-      success: function (data) {
-          //List all .png file names in the page
-          $(data).find("a:contains(.jpg)").each(function () {
-              var filename = this.href.replace(window.location.host, "").replace("http://", "");
-              console.log(album.imagesLocation + filename);
-              $("body").append("<img src='" + album.imagesLocation + "1.jpg'>").addClass('photoFrame');
-          });
-      }
-  });
 
-  console.log(window.location.host + ', ');
+  var folderName = window.location.host + album.imagesLocation;
+  $('#photoContainer').append("<img src='" + folderName + "1.jpg'>").addClass('photoFrame');
+  console.log(window.location.host);
 }
