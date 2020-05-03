@@ -265,15 +265,19 @@ body {
 /* Style about photo slide show. */
 #photoContainer {
 	position: absolute;
+}
+
+#photoContainerBackground {
+	position: absolute;
 	width: 100vw;
 	height: 100vh;
 	background-color: black;
-	animation-name: photoContainerAnimation;
+	animation-name: photoContainerBackgroundAnimation;
 	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
 }
 
-@keyframes photoContainerAnimation {
+@keyframes photoContainerBackgroundAnimation {
 	from {opacity: 0;}
 	to {opacity: 40%;}
 }
