@@ -35,9 +35,9 @@ function changeType(element, target) {
 function main() {
     function trace(controlElement, targetElement) {
         let elements = document.getElementsByClassName(controlElement.className);
-        for (let element of elements) {
-            let targets = document.getElementsByClassName(targetElement.className);
-            if (elements.length > 0 && targets.length > 0) {
+        let targets = document.getElementsByClassName(targetElement.className);
+        if (elements.length > 0 && targets.length > 0) {
+            for (let element of elements) {
                 let posA = new Vector2(parseInt(element.style.left, 10), parseInt(element.style.top, 10))
                 let distance = new Vector2(0, 0).distance(new Vector2(screen.width, screen.height));
                 let aim = null;
@@ -51,10 +51,12 @@ function main() {
                         distance = dis;
                     }
                 }
-                aim = new Vector2(parseInt(aim.style.left, 10), parseInt(aim.style.top, 10))
-                let direction = posA.direction(aim).multiply(3);
-                element.style.left = parseInt(element.style.left, 10) + direction.x;
-                element.style.top = parseInt(element.style.top, 10) +  direction.y;
+                if (aim != null) {
+                    aim = new Vector2(parseInt(aim.style.left, 10), parseInt(aim.style.top, 10))
+                    let direction = posA.direction(aim).multiply(3);
+                    element.style.left = parseInt(element.style.left, 10) + direction.x;
+                    element.style.top = parseInt(element.style.top, 10) +  direction.y;
+                }
             }
         }
     }
