@@ -7,6 +7,12 @@ function addItem(event) {
     document.body.appendChild(obj);
 }
 
+function changeAddType(type) {
+    document.getElementById(addingType.className).style.backgroundColor = "lightgray";
+    addingType = type;
+    document.getElementById(type.className).style.borderColor = "white";
+}
+
 class Vector2 {
     constructor(x, y) {
         this.x = x;
@@ -109,8 +115,8 @@ var addingType = Rock;
 var isPlaying = null;
 
 document.getElementsByClassName("bg")[0].addEventListener("click", addItem);
-document.getElementById("changePaper").onclick = function () { addingType = Paper; };
-document.getElementById("changeScissors").onclick = function () { addingType = Scissors; };
-document.getElementById("changeRock").onclick = function () { addingType = Rock; };
-document.getElementById("clear").onclick = clear;
+document.getElementById("changePaper").onclick = changeAddType(Paper);
+document.getElementById("changeScissors").onclick = changeAddType(Scissors);
+document.getElementById("changeRock").onclick = changeAddType(Rock);
+document.getElementById("clear").onclick = clear();
 document.getElementById("play").addEventListener("click", play);
