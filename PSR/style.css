@@ -11,6 +11,10 @@
     height: 100vh;
 }
 
+#clear, #play {
+    margin: 0 50px 0 50px;
+}
+
 .rock, .paper, .scissors {
     position: absolute;
     height: 24px;
