@@ -52,7 +52,7 @@ function main() {
                     }
                 }
                 aim = new Vector2(parseInt(aim.style.left, 10), parseInt(aim.style.top, 10))
-                let direction = posA.direction(aim).multiply(2);
+                let direction = posA.direction(aim).multiply(3);
                 element.style.left = parseInt(element.style.left, 10) + direction.x;
                 element.style.top = parseInt(element.style.top, 10) +  direction.y;
             }
@@ -73,6 +73,19 @@ function play() {
     }
 }
 
+function clear() {
+    function remove(controlElement) {
+        let elements = Array.from(document.getElementsByClassName(controlElement.className));
+        elements.forEach(element => {
+            element.remove();
+        });
+    }
+
+    remove(Paper);
+    remove(Scissors);
+    remove(Rock);
+}
+
 const Paper = {
     text: String.fromCodePoint(0x1F4DD),
     className: "paper",
@@ -89,10 +102,11 @@ const Rock = {
 }
 
 var addingType = Rock;
-var isPlaying;
+var isPlaying = null;
 
 document.getElementsByClassName("bg")[0].addEventListener("click", addItem);
 document.getElementById("changePaper").onclick = function () { addingType = Paper; };
 document.getElementById("changeScissors").onclick = function () { addingType = Scissors; };
 document.getElementById("changeRock").onclick = function () { addingType = Rock; };
+document.getElementById("clear").onclick = clear;
 document.getElementById("play").addEventListener("click", play);
