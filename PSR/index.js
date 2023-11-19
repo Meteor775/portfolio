@@ -52,7 +52,7 @@ function main() {
                     }
                 }
                 aim = new Vector2(parseInt(aim.style.left, 10), parseInt(aim.style.top, 10))
-                let direction = posA.direction(aim).multiply(3);
+                let direction = posA.direction(aim).multiply(2);
                 element.style.left = parseInt(element.style.left, 10) + direction.x;
                 element.style.top = parseInt(element.style.top, 10) +  direction.y;
             }
