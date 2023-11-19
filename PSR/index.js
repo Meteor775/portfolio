@@ -35,9 +35,9 @@ function changeType(element, target) {
 function main() {
     function trace(controlElement, targetElement) {
         let elements = document.getElementsByClassName(controlElement.className);
-        if (elements.length > 0 && targets.length > 0) {
+        for (let element of elements) {
             let targets = document.getElementsByClassName(targetElement.className);
-            for (let element of elements) {
+            if (elements.length > 0 && targets.length > 0) {
                 let posA = new Vector2(parseInt(element.style.left, 10), parseInt(element.style.top, 10))
                 let distance = new Vector2(0, 0).distance(new Vector2(screen.width, screen.height));
                 let aim = null;
