@@ -22,7 +22,7 @@ class Vector2 {
     }
 
     static direction(lhs, rhs) {
-        let dis = lhs.distance(rhs);
+        let dis = Vector2.distance(lhs, rhs);
         return new Vector2((rhs.x - lhs.x) / dis, (rhs.y - lhs.y)  / dis);
     }
 }
