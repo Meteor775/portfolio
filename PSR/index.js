@@ -13,17 +13,17 @@ class Vector2 {
         this.y = y;
     }
 
-    multiply(vector2) {
-        return new Vector2(this.x * vector2, this.y * vector2);
+    static multiply(lhs, rhs) {
+        return new Vector2(lhs.x * rhs, lhs.y * rhs);
     }
 
-    distance(vector2) {
-        return Math.sqrt(Math.pow(vector2.y - this.y, 2) + Math.pow(vector2.x - this.x, 2));
+    static distance(lhs, rhs) {
+        return Math.sqrt(Math.pow(rhs.y - lhs.y, 2) + Math.pow(rhs.x - lhs.x, 2));
     }
 
-    direction(vector2) {
-        let dis = this.distance(vector2);
-        return new Vector2((vector2.x - this.x) / dis, (vector2.y - this.y)  / dis);
+    static direction(lhs, rhs) {
+        let dis = lhs.distance(rhs);
+        return new Vector2((rhs.x - lhs.x) / dis, (rhs.y - lhs.y)  / dis);
     }
 }
 
@@ -39,11 +39,11 @@ function main() {
         if (elements.length > 0 && targets.length > 0) {
             for (let element of elements) {
                 let posA = new Vector2(parseInt(element.style.left, 10), parseInt(element.style.top, 10))
-                let distance = new Vector2(0, 0).distance(new Vector2(screen.width, screen.height));
+                let distance = Vector2.distance(new Vector2(0, 0), new Vector2(screen.width, screen.height));
                 let aim = null;
                 for (let target of targets) {
                     let posB = new Vector2(parseInt(target.style.left, 10), parseInt(target.style.top, 10))
-                    let dis = posA.distance(posB);
+                    let dis = Vector2.distance(posA, posB);
                     if (dis < 20) {
                         changeType(target, controlElement);
                     } else if (dis < distance) {
@@ -53,7 +53,7 @@ function main() {
                 }
                 if (aim != null) {
                     aim = new Vector2(parseInt(aim.style.left, 10), parseInt(aim.style.top, 10))
-                    let direction = posA.direction(aim).multiply(3);
+                    let direction = Vector2.multiply(Vector2.direction(posA, aim), 3);
                     element.style.left = parseInt(element.style.left, 10) + direction.x;
                     element.style.top = parseInt(element.style.top, 10) +  direction.y;
                 }
@@ -62,13 +62,13 @@ function main() {
     }
     
     trace(Paper, Rock);
-    trace(Rock, Scissors);
-    trace(Scissors, Paper);
+    setTimeout(trace(Rock, Scissors), 20);
+    setTimeout(trace(Scissors, Paper), 20);
 }
 
 function play() {
     if (!isPlaying)
-        isPlaying = setInterval(main, 50);
+        isPlaying = setInterval(main, 60);
     else {
         clearInterval(isPlaying);
         isPlaying = null
