@@ -1,0 +1,43 @@
+.bg {
+    background-color: white;
+    position: absolute;
+    border: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.rock, .paper, .scissors {
+    position: absolute;
+    height: 24px;
+    width: 18px;
+    text-align: center;
+    user-select: none;
+}
+
+.buttons {
+    position: relative;
+    text-align: center;
+    user-select: none;
+}
+
+.button {
+    background-color: lightgray;
+    font-size: 18pt;
+    height: 60px;
+    width: 60px;
+    border-radius: 15px;
+    margin: 0 5px 0 5px;
+}
+
+.button:hover {
+    background-color: darkgray;
+}
+
+.button:active {
+    background-color: gray;
+}
