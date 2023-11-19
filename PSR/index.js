@@ -84,6 +84,8 @@ function clear() {
     remove(Paper);
     remove(Scissors);
     remove(Rock);
+    clearInterval(isPlaying);
+    isPlaying = null
 }
 
 const Paper = {
