@@ -75,9 +75,10 @@ function play() {
 
 function clear() {
     function remove(controlElement) {
-        let elements = document.getElementsByClassName(controlElement.className);
-        for (let element of elements)
+        let elements = Array.from(document.getElementsByClassName(controlElement.className));
+        elements.forEach(element => {
             element.remove();
+        });
     }
 
     remove(Paper);
