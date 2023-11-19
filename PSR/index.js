@@ -117,9 +117,9 @@ function changeType(buttonName, type) {
 }
 changeType("changePaper", Paper);
 
-document.getElementsByClassName("bg")[0].addEventListener("click", addItem);
+document.getElementsByClassName("bg")[0].addEventListener("mousedown", addItem);
 document.getElementById("changePaper").onclick = function () { changeType("changePaper", Paper); };
 document.getElementById("changeScissors").onclick = function () { changeType("changeScissors", Scissors); };
 document.getElementById("changeRock").onclick = function () { changeType("changeRock", Rock); };
 document.getElementById("clear").onclick = clear;
-document.getElementById("play").addEventListener("click", play);
+document.getElementById("play").onclick = play;
