@@ -7,12 +7,6 @@ function addItem(event) {
     document.body.appendChild(obj);
 }
 
-function changeAddType(type) {
-    document.getElementById(addingType.className).style.backgroundColor = "lightgray";
-    addingType = type;
-    document.getElementById(type.className).style.borderColor = "white";
-}
-
 class Vector2 {
     constructor(x, y) {
         this.x = x;
@@ -33,7 +27,7 @@ class Vector2 {
     }
 }
 
-function changeType(element, target) {
+function changeItem(element, target) {
     element.innerHTML = target.text;
     element.className = target.className;
 }
@@ -51,7 +45,7 @@ function main() {
                     let posB = new Vector2(parseInt(target.style.left, 10), parseInt(target.style.top, 10))
                     let dis = Vector2.distance(posA, posB);
                     if (dis < 20) {
-                        changeType(target, controlElement);
+                        changeItem(target, controlElement);
                     } else if (dis < distance) {
                         aim = target;
                         distance = dis;
@@ -111,12 +105,21 @@ const Rock = {
     className: "rock",
 }
 
-var addingType = Rock;
+var addingType = null;
 var isPlaying = null;
 
+function changeType(buttonName, type) {
+    let buttons = document.getElementsByClassName("button");
+    for (let button of buttons)
+        button.style.backgroundColor = null
+    addingType = type;
+    document.getElementById(buttonName).style.backgroundColor = "Snow";
+}
+changeType("changePaper", Paper);
+
 document.getElementsByClassName("bg")[0].addEventListener("click", addItem);
-document.getElementById("changePaper").onclick = changeAddType(Paper);
-document.getElementById("changeScissors").onclick = changeAddType(Scissors);
-document.getElementById("changeRock").onclick = changeAddType(Rock);
-document.getElementById("clear").onclick = clear();
+document.getElementById("changePaper").onclick = function () { changeType("changePaper", Paper); };
+document.getElementById("changeScissors").onclick = function () { changeType("changeScissors", Scissors); };
+document.getElementById("changeRock").onclick = function () { changeType("changeRock", Rock); };
+document.getElementById("clear").onclick = clear;
 document.getElementById("play").addEventListener("click", play);
